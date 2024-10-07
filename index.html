@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Planner</title>
+  </head>
+  <body>
+    <section class="bodySection">
+      <div class="header">
+        <h1>Let's see what's going on today...</h1>
+      </div>
+
+      <!--Reminder-->
+
+      <div class="reminder">
+        <p class="myReminder">No appointments today...take a break!</p>
+      </div>
+
+      <!--Calendar-->
+
+      <div class="calendar">
+        <span class="dayToday"></span>
+        <hr />
+        <span class="dateToday"></span>
+      </div>
+
+      <!--Weather-->
+
+      <div class="weather">
+        <p class="temperature">The temperature outside is:<br /></p>
+        <hr />
+        <p class="condition"></p>
+      </div>
+    </section>
+
+    <!--ToDo-->
+    <div class="todo">
+      <section>
+        <h2>My To-Do list:</h2>
+
+        <button class="addItem" onclick="addFunction()">
+          add new<img src="./icons/add2.png" width="30px" />
+        </button>
+      </section>
+      <section class="sectionToDo"></section>
+    </div>
+
+    <!--Appointments-->
+
+    <div class="appointment">
+      <section class="show">
+        <h2>My Appointment:</h2>
+
+        <button class="addAppoint">
+          add new<img src="./icons/add2.png" width="30px" />
+        </button>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

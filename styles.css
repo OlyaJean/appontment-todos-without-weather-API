@@ -1,0 +1,242 @@
+*{margin:0;
+padding:0;
+box-sizing: border-box;
+font-family: "Playwrite DE Grund", cursive;
+}
+:root{--purple:rgba(82, 82, 196, 0.274);
+--rose:rgba(83, 45, 155, 0.433);
+--pink:rgba(144, 74, 134, 0.449);
+--pink-light:rgba(144, 92, 136, 0.405);
+--backgr:rgba(222, 169, 169, 0.254);
+--fontColor:rgb(34, 48, 107)
+}
+body{width:100vw;
+height: 100vh;
+background: linear-gradient(135deg,var(--rose),var(--pink),var(--purple), var(--rose), var(--purple),var(--pink),var(--rose),var(--purple),var(--pink),var(--rose));
+padding:50px;
+
+}
+
+.header,.calendar,.weather,.todo,.appointment,.reminder{background:var(--backgr);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px var(--purple);
+    margin: 0 0 10px 0;
+    }
+/* open menu spans*/
+
+.todo span,.appointment span{
+font-size: 2.5rem;
+cursor: pointer;}
+.todo span:hover,.appointment span:hover{background-color: var(--pink-light);
+    border-radius: 5px;
+}
+.todo span:active,.appointment span:active{background-color: var(--pink);
+    border-radius: 5px;}
+/*header*/
+
+
+.header{animation: mymove 0.8s ease;
+   width:300px
+}
+.header h1{color:var(--fontColor);
+font-size:1rem;}
+
+/*Calendar*/
+
+.calendar{text-align: center;
+animation: mymove 1s ease;
+width:300px
+}
+.calendar hr{margin:10px 0;
+border-color: var(--rose);}
+.dayToday{font-weight: bold;
+    font-size:1.5rem ;}
+
+/*Weather*/
+.weather{animation: mymove 1s ease;
+    height:170px;
+ 
+}
+.temperature{text-align: center;
+}
+.temperature span{font-weight: bold;
+font-size:1.5rem ;}
+.weather hr{margin:10px 0;
+    border-color: var(--rose);}
+.iconStyle{
+    width: 60px;
+  margin:0 calc(50% - 30px) 
+}    
+
+
+/*To Do*/
+.sectionToDo{
+flex-direction: column;}
+
+/*.todo{width:535px}*/
+.todo section{display: flex;
+justify-content: space-between;
+}
+.addItem{
+background-color: var(--purple);
+display: flex;
+align-items: center;
+justify-content: space-around;
+padding: 5px;
+border-radius: 10px;
+font-size: 1.2rem;
+cursor: pointer;
+width:150px;
+border:none;
+}
+.addItem:hover{background-color: var(--pink);}
+.addItem:active{background-color: var(--pink-light);}
+.todoList{background-color: rgba(255, 255, 255, 0.56);
+width:80%;
+border-radius: 5px;
+padding-left:5px;
+padding-right:5px}
+.todoListCross{text-decoration: line-through;}
+
+.listSection,.appDiv{display: flex;
+justify-content: space-between;
+background-color: rgba(251, 236, 251, 0.504);
+border-radius: 10px;
+margin: 5px;
+margin-top: 10px;
+padding: 5px}
+
+.checkBtn,.delBtn{height: 30px;
+width: 30px;
+border: none;
+border-radius: 5px;
+background-color: var(--purple);
+cursor: pointer;
+
+}
+.checkBtn:hover,.delBtn:hover{
+    background-color: var(--pink);
+}
+.checkBtn:active,.delBtn:active{
+    background-color: var(--pink-light);
+}
+
+/*toggle classes for check button*/
+
+.checked{width: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--purple);
+    cursor: pointer;
+    height: 30px;
+    }
+.checked:hover{ background-color: var(--pink);}
+.checked:active{ background-color: var(--pink-light);}    
+
+/*Appointment*/
+
+.appointment section{justify-content: space-between;}
+
+.addAppoint{background-color: var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width:150px;
+    border:none;}
+
+.addAppoint:hover{background-color: var(--pink);}
+.addAppoint:active{background-color: var(--pink-light);}
+.appDiv{display:block;
+    
+}
+.text{
+    margin-bottom: 5px;
+    font-size: 1rem;
+   
+}
+.input,input{background-color: rgba(255, 255, 255, 0.56);
+    width:100%;
+    margin-right:5px;
+ 
+    border-radius: 5px;
+    padding-left:5px;
+    padding-right:5px;
+border: none;
+z-index: 40;}
+
+input{margin-top: 5px;}
+
+
+.hidden{display: none;}
+.show{display: flex;}
+
+
+/* save btn*/
+
+.saved{height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--purple);
+    cursor: pointer;
+    }
+/* Reminder */
+.reminder{width:300px}
+.myReminder{font-size: 1.3rem;}
+
+/* Animation*/
+
+@keyframes mymove{
+    0%{translate: -100%;
+    visibility: hidden;}
+  
+   100%{
+visibility: visible;}
+}
+
+@media screen and (max-width:630px){
+    body{display:flex;
+    flex-direction: column;
+height:100vh}
+    .header,.calendar,.weather,.todo,.reminder{width:100%}
+ 
+}
+
+@media screen and (min-width:631px){
+    .weather{   width:200px;
+        height:225px;
+        position: absolute;
+        top:50px;
+        right:50px}
+    .header,.calendar,.weather,.todo{margin-bottom: 10px;}  
+    .addAppoint,.addItem{display:block}  
+   
+}
+
+@media screen and (min-width:1000px){
+ body{display: flex;
+justify-content: space-between;}
+ .bodySection{width:200px;
+height:100vh;
+margin-bottom: 50px;}
+ .header,.reminder,.calendar{width: 200px;
+height: 17.4vh;}
+.weather{position: relative;
+left:0;
+top:0;
+width:200px;
+height:30vh
+}
+
+.todo,.appointment{max-width: 500px;}
+.todo{margin:0 10px;
+width:50%}
+.appointment{margin:0;
+width: 50%;}
+}
+
