@@ -110,7 +110,7 @@ console.log(checkButtons)
 
     const appSection = appBlock.firstElementChild;
     appSection.classList.add('show')
-    console.log(appSection)
+  
 
     const appBtn = document.querySelector('.addAppoint');
 
