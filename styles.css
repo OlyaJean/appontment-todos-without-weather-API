@@ -5,19 +5,19 @@ font-family: "Playwrite DE Grund", cursive;
 }
 :root{--purple:rgba(82, 82, 196, 0.274);
 --rose:rgba(83, 45, 155, 0.433);
---pink:rgba(144, 74, 134, 0.449);
+--pink:rgba(236, 187, 229, 0.344);
 --pink-light:rgba(144, 92, 136, 0.405);
 --backgr:rgba(222, 169, 169, 0.254);
 --fontColor:rgb(34, 48, 107)
 }
 body{width:100vw;
 height: 100vh;
-background: linear-gradient(135deg,var(--rose),var(--pink),var(--purple), var(--rose), var(--purple),var(--pink),var(--rose),var(--purple),var(--pink),var(--rose));
+background: var(--rose);
 padding:50px;
 
 }
 
-.header,.calendar,.weather,.todo,.appointment,.reminder{background:var(--backgr);
+.header,.calendar,.todo,.appointment,.reminder{background:var(--pink);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px 5px var(--purple);
@@ -54,20 +54,13 @@ border-color: var(--rose);}
     font-size:1.5rem ;}
 
 /*Weather*/
-.weather{animation: mymove 1s ease;
-    height:170px;
+.reminder{animation: mymove 1s ease;
+   
  
 }
-.temperature{text-align: center;
-}
-.temperature span{font-weight: bold;
-font-size:1.5rem ;}
-.weather hr{margin:10px 0;
-    border-color: var(--rose);}
-.iconStyle{
-    width: 60px;
-  margin:0 calc(50% - 30px) 
-}    
+
+
+  
 
 
 /*To Do*/
@@ -137,7 +130,7 @@ cursor: pointer;
 /*Appointment*/
 
 .appointment section{justify-content: space-between;}
-
+.appointment{margin-bottom: 50px;}
 .addAppoint{background-color: var(--purple);
     display: flex;
     align-items: center;
@@ -168,13 +161,13 @@ cursor: pointer;
     padding-right:5px;
 border: none;
 z-index: 40;}
-
+input{width:40%}
 input{margin-top: 5px;}
 
 
 .hidden{display: none;}
 .show{display: flex;}
-
+.show h2{max-width: 50%;}
 
 /* save btn*/
 
@@ -198,12 +191,17 @@ input{margin-top: 5px;}
    100%{
 visibility: visible;}
 }
-
+@media (max-width:500px){
+.addAppoint,.addItem{font-size: 0.7rem;
+width:100px;
+height:50px}
+.show h2,section h2{font-size: 1rem;}
+}
 @media screen and (max-width:630px){
     body{display:flex;
     flex-direction: column;
 height:100vh}
-    .header,.calendar,.weather,.todo,.reminder{width:100%}
+    .header,.calendar,.todo,.reminder{width:100%}
  
 }
 
